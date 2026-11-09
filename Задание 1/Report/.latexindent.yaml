@@ -1,0 +1,13 @@
+defaultIndent: '    '
+indentPreamble: 1
+modifyLineBreaks:
+  preserveBlankLines: 1
+  condenseMultipleBlankLinesInto: 1
+  oneSentencePerLine:
+    manipulateSentences: 1
+    removeSentenceLineBreaks: 1
+    textWrapSentences: 0
+    sentencesDoNOTcontain:
+      other: '\\begin|\\end|(?<!\\)&'
+  textWrapOptions:
+    columns: 0

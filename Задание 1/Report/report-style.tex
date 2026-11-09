@@ -1,0 +1,55 @@
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{CMU Serif}}
+\IfFontExistsTF{Times New Roman}{\newfontfamily\cyrillicfont{Times New Roman}}{\newfontfamily\cyrillicfont{CMU Serif}}
+\setmonofont{lmmono10-regular.otf}[Scale=MatchLowercase]
+\usepackage{amsmath,mathtools}
+\usepackage{unicode-math}
+\setmathfont{texgyretermes-math.otf}
+\usepackage[left=27mm,right=20mm,top=20mm,bottom=22mm]{geometry}
+\usepackage{graphicx,booktabs,array,tabularx,threeparttable,float,placeins}
+\usepackage{caption,setspace,titlesec,titletoc,etoolbox}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{xurl}
+\setstretch{1.20}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\clubpenalty=10000
+\widowpenalty=10000
+\brokenpenalty=10000
+\displaywidowpenalty=10000
+\pagestyle{plain}
+\setcounter{tocdepth}{2}
+\titleformat{\section}{\bfseries\large}{\thesection}{0.65em}{}
+\titleformat{\subsection}{\bfseries\normalsize}{\thesubsection}{0.65em}{}
+\titlespacing*{\section}{0pt}{1.2\baselineskip}{0.5\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.8\baselineskip}{0.35\baselineskip}
+\titlecontents{section}[0em]{\addvspace{4pt}\bfseries}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{subsection}[1.5em]{\small}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.5pc]{.}\contentspage}
+\contentsmargin{2.5em}
+\captionsetup{font=small,labelsep=period,justification=centering}
+\captionsetup[table]{position=top,skip=6pt}
+\setlength{\textfloatsep}{12pt}
+\setlength{\intextsep}{12pt}
+\newcommand{\PaperTableStyle}{\centering\small\setstretch{1}\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.15}}
+\newcommand{\PaperTableNotesStyle}{\footnotesize\setstretch{1}}
+\newcommand{\ReportStatus}[1]{\textbf{[#1]}}
+\newcommand{\normE}[1]{\left\lVert #1\right\rVert_E}
+\newcommand{\inner}[2]{\left(#1,#2\right)_h}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\makeatletter
+\newcommand{\DataInput}[1]{\@@input tables/#1.tex }
+\makeatother
+\AtBeginEnvironment{thebibliography}{\small\setstretch{1.1}}
+
+\usepackage[autostyle=true]{csquotes}
+\usepackage[backend=biber,style=numeric,sorting=none,giveninits=true,maxnames=5]{biblatex}
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\small\setstretch{1.1}}
